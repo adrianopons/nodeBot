@@ -1,12 +1,15 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const uuid = require('node-uuid');
 
+const Schema = mongoose.Schema;
 const BotSchema = new Schema(
   {
-		id: {
+		_id: {
       type: String,
-      required: true
-    },
+			default: function () {
+				return uuid.v1();
+			}
+		},
     name: {
       type: String,
       required: true
