@@ -1,1 +1,2 @@
-# nodeBot
+# The Bot API
+

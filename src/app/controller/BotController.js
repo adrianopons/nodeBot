@@ -9,7 +9,7 @@ class BotController {
   }
   //get
   async index(req, res) {
-    const data = await Bot.find({_id: req.params.id});
+    const data = await Bot.find({id: req.params.id});
     let dataNoFormato = {};
 
     if (data[0])
@@ -24,7 +24,7 @@ class BotController {
     const retorno = {status: false, motivo: 'Objeto Bot não foi enviado'};
 
     if (newData.id) {
-      await Bot.updateOne({ _id: newData.id }, newData, (err, raw) => {
+      await Bot.updateOne({ id: newData.id }, newData, (err, raw) => {
         if (err) {
           retorno.motivo = err;
         } else {
@@ -45,7 +45,7 @@ class BotController {
     const retorno = {status: false, motivo: "Nenhum ID enviado"};
 
     if (idToDelete) {
-      await Bot.deleteOne({ _id: idToDelete }, null, (err, raw) => {
+      await Bot.deleteOne({ id: idToDelete }, null, (err, raw) => {
         if (err) {
           retorno.motivo = err;
         } else {
