@@ -4,12 +4,10 @@ const uuid = require('node-uuid');
 const Schema = mongoose.Schema;
 const BotSchema = new Schema(
   {
-		_id: {
+		id: {
       type: String,
-			default: function () {
-				return uuid.v1();
-			}
-		},
+      required: true
+		},    
     name: {
       type: String,
       required: true

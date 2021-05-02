@@ -1,3 +1,3 @@
 module.exports = {
-  uri: "mongodb://localhost:27017/NODERESTBOT"
+  uri: 'mongodb://mongo:27017/NODERESTBOT'
 };

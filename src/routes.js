@@ -13,12 +13,4 @@ routes.post("/messages", MessageController.store);
 routes.get("/messages/:id", MessageController.index);
 routes.get("/messages", MessageController.getAllFromConvesationid);
 
-// routes.get("/messages", function(req, res) {
-//   return res.send("Atualizar mensagem");
-// });
-
-// routes.post("/bots", function(req, res) {
-//   return res.send("Apagar mensagem");
-// });
-
 module.exports = routes;
