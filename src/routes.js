@@ -1,20 +1,23 @@
 const express = require("express");
 const routes = express.Router();
 
-routes.get("/", function(req, res) {
-  return res.send("Ler mensagens");
-});
+const BotController = require("./app/controller/BotController");
 
-routes.post("/", function(req, res) {
-  return res.send("Enviar mensagem");
-});
+routes.post("/bots", BotController.store);
+routes.get("/bots", BotController.index);
 
-routes.patch("/", function(req, res) {
-  return res.send("Atualizar mensagem");
-});
 
-routes.delete("/", function(req, res) {
-  return res.send("Apagar mensagem");
-});
+
+// routes.put("/bots", BotController.index);
+// routes.delete("/bots", BotController.index);
+
+
+// routes.get("/messages", function(req, res) {
+//   return res.send("Atualizar mensagem");
+// });
+
+// routes.post("/bots", function(req, res) {
+//   return res.send("Apagar mensagem");
+// });
 
 module.exports = routes;
